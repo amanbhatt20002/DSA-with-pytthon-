@@ -28,3 +28,4 @@ def secondLEl(arr):
 arr = [5, 1, 2, 3]
 print(largestEl(arr))
 print(secondLEl(arr))
+   
