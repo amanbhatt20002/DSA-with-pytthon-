@@ -8,8 +8,10 @@ def returnIndex(arr,value):
             return i
     return res
 
+
+
 arr=[1,2,3,4,99,6]
-value=99
+value=98
 result=returnIndex(arr,value)+1
 if result:
     print(f"target {value} found at position {result}")
