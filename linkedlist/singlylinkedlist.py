@@ -27,14 +27,42 @@ class SinglyLinkedList:
         else:
             curr=self.head
             while curr is not None:
-                print(curr.value)
+                print(curr.value,end=",")
                 curr=curr.next
+    def insert(self,value,pos):
+        new_node=Node(value)
+        if pos==0:
+            new_node.next=self.head
+            self.head=new_node
+        else:
+            curr=self.head
+            prev=None
+            count=0
+            while curr is not None and count<pos:
+                prev=curr
+                curr=curr.next
+                count+=1
+            prev.next=new_node
+            new_node.next=curr
+
+
+
+        
+        
+       
+
+
+
 
 
 list1=SinglyLinkedList()
 list1.append(5)
 list1.append(6)
 list1.append(7)
+list1.append(5)
+list1.append(7)
+list1.insert(55,3)
+list1.insert(56,3)
 list1.traverse()
 
 
