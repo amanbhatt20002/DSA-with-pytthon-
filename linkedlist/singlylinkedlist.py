@@ -38,12 +38,25 @@ class SinglyLinkedList:
             curr=self.head
             prev=None
             count=0
-            while curr is not None and count<pos:
+            while curr is not None and count<pos-1:
                 prev=curr
                 curr=curr.next
                 count+=1
             prev.next=new_node
             new_node.next=curr
+    def delete(self,key):
+        curr=self.head
+        if curr and curr.value==key:
+            self.head=curr.next
+            return
+        prev=None
+        while curr and curr.value!=key:
+            prev=curr
+            curr=curr.next
+        if curr:
+            prev.next=curr.next
+
+
 
 
 
@@ -63,6 +76,9 @@ list1.append(5)
 list1.append(7)
 list1.insert(55,3)
 list1.insert(56,3)
+list1.delete(56)
+list1.insert(56,3)
+
 list1.traverse()
 
 
