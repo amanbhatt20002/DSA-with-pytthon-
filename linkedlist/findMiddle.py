@@ -87,6 +87,21 @@ class SinglyLinkedList:
             prev=temp
             temp=front
         self.head=prev
+
+        # detect a  cycle or loop 
+        # brute force
+    def isCycle(self):
+        temp=self.head
+        Z=set()
+        while temp!=None:
+            if temp in Z:
+                return True
+            else:
+                Z.add(temp)
+            temp=temp.next
+                
+        
+        return False
        
             
         
