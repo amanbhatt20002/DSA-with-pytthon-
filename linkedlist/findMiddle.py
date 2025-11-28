@@ -77,13 +77,18 @@ class SinglyLinkedList:
         return slow
     
     # reverse a linked list 
-    def reverse(self):
+    def reverse(self): 
         temp=self.head
         prev=None
 
         while temp!=None:
+            front=temp.next
+            temp.next=prev
             prev=temp
-            temp=temp.next
+            temp=front
+        self.head=prev
+       
+            
         
 
 
@@ -114,8 +119,12 @@ list1.append(98)
 list1.append(96)
 list1.append(92)
 list1.traverse()
-value=list1.findMiddle()
-print(list1.reverse())
+# value=list1.findMiddle()
+list1.reverse()
+print()
+list1.traverse()
+
+
 
 
 
